@@ -1,0 +1,313 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section class="banner">
+    <div class="container">
+    <div class="row">
+    <div class="banner__content col-12 col-xl-10">
+    <div class="banner__title">
+    <h1 class="mb-3">
+    {{ carriere.titre }}
+    <span class="text-primary">
+                                        </span>
+    </h1>
+    <div class="mb-3">
+        <i class="fas fa-clock"></i>&nbsp Publié le {{ carriere.createdAt|date('Y-m-d') }}
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="banner__bg img-to-lazy" style="background-position: center center" data-src="../../wp-content/themes/cloudtemple/src/assets/images/bg-job.jpg"></div>
+    </section>
+
+
+    <div class="section-breadcrumb">
+        <div class="container">
+            <a href="{{ path('home_carriere') }}"><i class="icon ion-md-arrow-back"></i> Toutes nos offres</a>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalCandidacy" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Candidature</h5>
+                    <div class="close" data-dismiss="modal" aria-label="Close" style="cursor: pointer">
+                        <span aria-hidden="true">times</span>
+                    </div>
+                </div>
+                <form class="dark m-0" action="https://www.cloud-temple.com/wp-admin/admin-ajax.php" method="post" id="candidacies-form" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="container-input">
+                            <label class="container-input-title">Coordonnées</label>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group sm form-select">
+                                        <label class="required" for="gender">Civilité</label>
+                                        <select class="sm" id="gender" name="gender" required>
+                                            <option value="">Sélectionnez votre civilité</option>
+                                            <option value="m">M</option>
+                                            <option value="mme">Mme</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label class="required" for="firstname">Prénom</label>
+                                        <input class="sm" id="firstname" name="firstname" type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label class="required" for="name">Nom</label>
+                                        <input class="sm" id="name" name="name" type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label for="address">Adresse</label>
+                                        <input class="sm" id="address" name="address" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label for="postal_code">Code postal</label>
+                                        <input class="sm" id="postal_code" name="postal_code" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label class="required" for="city">Ville</label>
+                                        <input class="sm" id="city" name="city" type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label for="country">Pays</label>
+                                        <input class="sm" id="country" name="country" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label class="required" for="email">Email</label>
+                                        <input class="sm" id="email" name="email" type="email" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label class="required" for="phone">Téléphone</label>
+                                        <input class="sm" id="phone" name="phone" type="phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-input">
+                            <label class="container-input-title">Formation</label>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group sm form-select">
+                                        <label class="required" for="studies">Niveau d'études</label>
+                                        <select class="sm" id="studies" name="studies" required>
+                                            <option value="">Choisir votre niveau d'études</option>
+                                            <option value="1">Inférieur au BAC</option>
+                                            <option value="2">BAC</option>
+                                            <option value="3">BAC +2/3</option>
+                                            <option value="4">BAC +4/5</option>
+                                            <option value="5">Autres</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label for="year_degree">Année d'obtention du diplôme</label>
+                                        <input class="sm" id="year_degree" name="year_degree" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label for="school">École / Université</label>
+                                        <input class="sm" id="school" name="school" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label for="supp_school">Formation supplémentaire</label>
+                                        <input class="sm" id="supp_school" name="supp_school" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label for="other_languages">Langue(s) étrangère(s)</label>
+                                        <input class="sm" id="other_languages" name="other_languages" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-input">
+                            <label class="container-input-title">Expérience professionnelle</label>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group sm form-select">
+                                        <label for="experience">Expérience</label>
+                                        <select class="sm" id="experience" name="experience">
+                                            <option value="">Sélectionnez votre niveau d'expérience</option>
+                                            <option value="1">Débutant</option>
+                                            <option value="2">Inférieure à 2 ans</option>
+                                            <option value="3">De 2 à 5 ans</option>
+                                            <option value="4">De 5 à 10 ans</option>
+                                            <option value="5">Supérieur à 10 ans</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label class="required" for="uploadCV">CV (10Mo maximum)</label>
+                                        <input class="sm" name="cv" id="uploadCV" type="file" accept="application/pdf" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm">
+                                        <label for="uploadLetter">Lettre de motivation (10Mo maximum)</label>
+                                        <input class="sm" name="letter" id="uploadLetter" type="file" accept=".pdf">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-input">
+                            <label class="container-input-title">Autre</label>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm form-select">
+                                        <label class="required" for="disponibility">Disponibilité</label>
+                                        <select class="sm" id="disponibility" name="disponibility" required>
+                                            <option value="">Sélectionnez votre disponibilité</option>
+                                            <option value="1">Immédiate</option>
+                                            <option value="2">Inférieure à 3 mois</option>
+                                            <option value="3">Entre 3 et 6 mois</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group sm form-select">
+                                        <label class="required" for="mobility">Mobilité</label>
+                                        <select class="sm" id="mobility" name="mobility" required>
+                                            <option value="">Sélectionnez votre mobilité</option>
+                                            <option value="1">Permis B sans voiture</option>
+                                            <option value="2">Permis B avec voiture</option>
+                                            <option value="3">Autre</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="hidden" id="nonce_job" name="nonce_job" value="36c9179712" />
+                        <input type="hidden" name="action" value="custom_action_job">
+                        <input type="hidden" name="job_id" value="17317">
+                        <div class="alert alert-contact d-none" role="alert"></div>
+                        <div>
+                            <button id="submit-candidacies-form" type="submit" class="btn btn-primary" value="submit">
+                                <i class="fas fa-circle-notch fa-spin"></i>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times-circle"></i>
+                                <span>Envoyer</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-7">
+                    <div class="mb-4">
+
+                        <h4>Descriptif du poste</h4>
+                        <p> <strong></strong> <strong>{{ carriere.profil }}</strong>{{ carriere.description }} , le poste est situé a {{ carriere.locatisation}} (37).</p>
+                        <p><strong>Votre mission, si vous l’acceptez</strong> :</p>
+                        <ul>
+                            <li>{{carriere.missions}}</li>
+                        </ul>
+
+                    </div>
+                    <div class="mb-4">
+                        <h4>Profil recherché</h4>
+                        <p>{{ carriere.profil }}</p>
+                        <p><strong>Informations complémentaires :</strong></p>
+                        <p>Poste situé a {{ carriere.locatisation }}</p>
+                         <ul>
+                            <li></li>
+                        </ul>
+                        <p>Si vous souhaitez une vie professionnelle enrichissante, venez construire votre carrière chez Cloud Temple </p>
+                        <p><strong>Votre passion, votre engagement et vos succès seront valorisés.</strong></p>
+
+
+                    </div>
+                    <hr>
+                    <div class="single-footer mb-5 mb-lg-0">
+                        <div class="single-footer__sharing">
+                            <div id="share"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 offset-lg-1">
+                    <div class="job-details__sticky">
+                        <div class="card">
+                            <div class="card__body">
+                                <h5>Détails de l'offre</h5>
+                                <ul class="pl-4">
+                                    <li class="mb-2">
+                                        Localisation :
+                                        <ul class="job-details__locations">
+                                            <li class="tag">{{ carriere.locatisation }}</li>
+                                        </ul>
+                                    </li>
+                                    <li class="mb-2">Salaire : <strong>{{ carriere.salaire }}</strong></li>
+                                    <li class="mb-2">Prise de poste : <strong>{{carriere.disponnibilite}}</strong></li>
+                                </ul>
+                            </div>
+                            <div class="card__footer">
+                                <p>Pour postulez envoyez un mail a </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    </div>
+
+
+
+{% endblock body %}
+
+
+
+

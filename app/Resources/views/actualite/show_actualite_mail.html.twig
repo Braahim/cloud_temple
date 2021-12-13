@@ -1,0 +1,85 @@
+<body>
+    <div class="main-wrapper">
+
+
+        <!-- Mirrored from www.cloud-temple.com/lpr-la-palette-rouge-specialiste-europeen-de-la-location-gestion-de-palettes-choisit-cloud-temple-pour-mener-a-bien-un-vaste-projet-de-migration-dans-le-cloud/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Oct 2021 12:15:11 GMT -->
+
+
+        <section class="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="banner__content col-12 col-xl-10">
+                        <div class="banner__title">
+                            <h1 class="mb-3">
+                                {{ actualite.title }}
+                                <span class="text-primary">
+                                        </span>
+                            </h1>
+                            <div class="mb-3">
+                                <i class="fas fa-clock"></i>&nbsp;Publié le {{ actualite.dateCreation|date("d/m/y") }}
+                            </div>
+                            <ul class="categories mb-0">
+                                <li class="categories__item"><a class="categories__link" href="../category/a-la-une/index.html">A la une</a></li>
+                                <li class="categories__item"><a class="categories__link" href="../category/rex/index.html">REX</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner__bg img-to-lazy" style="background-position: center center" data-src="{{ asset('assets/img/' ~ actualite.getPhoto()) }}"></div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+
+
+
+
+
+
+
+                        <p>{{ actualite.subject }}</p>
+
+                        <div class="row single-footer">
+                            <div class="col single-footer__categories">
+                            </div>
+                            <div class="col single-footer__sharing">
+                                <div id="share"></div>
+                            </div>
+                        </div>
+
+                        <hr/>
+
+
+                    </div>
+
+                    <div class="col-12 col-lg-3 offset-lg-1">
+
+                        <div class="single__column">
+                            <h4>Articles récents</h4>
+                            <div class="card card-mini">
+                                <div class="card__body">
+                                    <div class="font-size-small">
+                                        <i class="icon ion-md-calendar mr-2"></i>
+                                        11/03/2016
+                                    </div>
+                                    <a href="../jai-transforme-schneider-electric/index.html" class="text-decoration-none">
+                                        <h6 class="mb-0">
+                                            Comment j&#8217;ai transformé Schneider Electric
+                                        </h6>
+                                    </a>
+                                </div>
+                                <div class="card__footer">
+                                    <a href="../jai-transforme-schneider-electric/index.html" class="read-more">Lire la suite <i class="icon ion-md-arrow-forward"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>

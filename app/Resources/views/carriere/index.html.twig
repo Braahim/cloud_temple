@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Carrieres list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Profil</th>
+                <th>Locatisation</th>
+                <th>Salaire</th>
+                <th>Disponnibilite</th>
+                <th>Type_contrat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carriere in carrieres %}
+            <tr>
+                <td><a href="{{ path('carriere_show', { 'id': carriere.id }) }}">{{ carriere.id }}</a></td>
+                <td>{{ carriere.titre }}</td>
+                <td>{{ carriere.description }}</td>
+                <td>{{ carriere.profil }}</td>
+                <td>{{ carriere.locatisation }}</td>
+                <td>{{ carriere.salaire }}</td>
+                <td>{{ carriere.disponnibilite }}</td>
+                <td>{{ carriere.typecontrat }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('carriere_show', { 'id': carriere.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('carriere_edit', { 'id': carriere.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('carriere_new') }}">Create a new carriere</a>
+        </li>
+    </ul>
+{% endblock %}

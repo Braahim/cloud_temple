@@ -1,0 +1,31 @@
+{% extends 'back.html.twig' %}
+
+{% block body %}
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content ">
+
+                <br>
+                <h1>Envoyer un mail a </h1>
+                {% form_theme mail_form 'bootstrap_4_layout.html.twig' %}
+                {{ form_start(mail_form) }}
+                {{ form_row(mail_form.nom, { 'attr':{'disabled':'disabled'} }) }}
+                {{ form_row(mail_form.prenom, { 'attr':{'disabled':'disabled'} }) }}
+                {{ form_row(mail_form.email, { 'attr':{'disabled':'disabled'} }) }}
+
+
+
+
+                {{ form_widget(mail_form) }}
+
+                {{ form_end(mail_form) }}
+                <br> <br> <br>
+                <ul>
+                    <li>
+                        <a href="{{ path('dashboard_carriere') }}">Back to the list</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

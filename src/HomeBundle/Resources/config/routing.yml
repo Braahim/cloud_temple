@@ -1,0 +1,18 @@
+home_homepage:
+    path:     /
+    defaults: { _controller: HomeBundle:Default:index }
+
+home_actualite:
+    path:     /actualite
+    defaults: { _controller: HomeBundle:Default:actualite }
+
+home_contact :
+    path :    /contact
+    defaults : {_controller: HomeBundle:Default:contact}
+
+home_carriere :
+    path :    /carriere
+    defaults : {_controller: HomeBundle:Default:carriere}
+
+
+

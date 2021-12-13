@@ -1,0 +1,32 @@
+{% extends 'back.html.twig' %}
+
+{% block body %}
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content ">
+
+            <br>
+            <h1>Actualite creation</h1>
+                {% form_theme form 'bootstrap_4_layout.html.twig' %}
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+
+
+                <input type="submit" value="Ajouter actualite" style=" padding:5px 15px;
+                                                                      background:#ccc;
+                                                                      border:0 none;
+                                                                      cursor:pointer;
+                                                                      -webkit-border-radius: 5px;
+                                                                      border-radius: 5px; "/>            {{ form_end(form) }}
+
+
+                <br><br><br>
+                <li>
+                    <a href="{{ path('dashboard_actualite') }}">Back to the list</a>
+                </li>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

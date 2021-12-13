@@ -1,0 +1,36 @@
+home_actualite:
+    resource: "@HomeBundle/Controller/actualiteController.php"
+    type:     annotation
+
+
+home_contact:
+    resource: "@HomeBundle/Controller/contactController.php"
+    type:     annotation
+
+home_carriere:
+    resource: "@HomeBundle/Controller/carriereController.php"
+    type:     annotation
+
+home:
+    resource: "@HomeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+back:
+    resource: '@AppBundle/Controller/backController.php'
+    type: annotation
+    prefix: /admin
+
+home_static_pages:
+    resource: '@HomeBundle/Controller/staticController.php'
+    type: annotation
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+

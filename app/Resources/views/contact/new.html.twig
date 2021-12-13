@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="banner__content col-12 col-xl-10">
+                    <div class="banner__title">
+                        <h1 class="mb-3">
+                            Contact
+                            <span class="text-primary">
+                                        </span>
+                        </h1>
+                    </div>
+                    <div class="banner__description"></div>
+                </div>
+            </div>
+        </div>
+        <div class="banner__bg img-to-lazy" style="background-position: center center" data-src="{{ asset('ctwwwmedias.blob.core.windows.net/default/2021/04/bg-contact-1600x1067.jpg') }}"></div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xl-6 d-flex mb-sm-5 flex-column mb-5 mb-xl-0">
+                    {% for flashMessage in app.session.flashbag.get('notice') %}
+
+                        <div class="alert alert-success">
+                            {{ flashMessage }}
+                        </div>
+
+                    {% endfor %}
+                    <h2 class="text-uppercase">Vous avez un projet ?<br/> discutons en !</h2>
+                    <p>Où que vous soyez dans votre parcours cloud, nous avons l'expérience et l'expertise nécessaires pour vous aider dans votre transformation.</p>
+                    <p>Nous sommes à votre écoute pour vous accompagner dans vos challenges !</p>
+                    <img class="mt-auto pt-5" src="" alt="" />
+                </div>
+                <div class="col-md-12 col-xl-6 d-flex mb-5 mb-xl-0">
+                    <div class="card mb-0">
+                        <div class="card__body">
+                            {{ form_start(form) }}
+                                <div class="row">
+                                    <div class="col-12 col-xl-6">
+                                        <div class="form-group mb-5">
+                                            {{ form_row(form.nom) }}
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xl-6">
+                                        <div class="form-group mb-5">
+                                            {{ form_row(form.prenom) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-xl-6">
+                                        <div class="form-group mb-5">
+                                            {{ form_row(form.email) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xl-6">
+                                        <div class="form-group mb-5">
+                                            {{ form_row(form.tel) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xl-6">
+                                    <div class="form-group mb-2">
+                                        {{ form_row(form.societe) }}
+
+                                    </div>
+                                    </div>
+
+                                    <div class="col-12 col-xl-6">
+                                    <div class="form-group mb-2">
+                                        {{ form_row(form.raisonSociale) }}
+
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-5">
+                                    {{ form_row(form.sujet) }}
+                                </div>
+                                <div class="form-group mb-2">
+                                    {{ form_row(form.message) }}
+                                </div>
+
+
+
+                                <small class="form-text text-muted mb-4 d-block"><span class="text-danger">*</span> champs obligatoires</small>
+
+                                <div class="g-recaptcha mb-5" data-sitekey="6Le6KaIUAAAAAIoH6x-bW5KQ6wgXKKbn4854tAMn"></div>
+                            {{ form_end(form) }}
+
+                                <div class="alert text-center mt-5 alert-contact d-none" role="alert"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src='../../www.google.com/recaptcha/api7d7c.js?hl=fr'></script>
+
+
+    </div>
+
+{% endblock %}
+

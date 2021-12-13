@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="banner__content col-12 col-xl-12">
+                    <div class="banner__title">
+                        <h1 class="mb-5" style="text-align: center;">
+                           <br><br>
+
+                        </h1>
+                    </div>
+                    <div class="banner__description"></div>
+                </div>
+            </div>
+        </div>
+        <div class="banner__bg " style="background: url('{{ asset('assets/img/bank/dataCenter.jpg') }}')">
+
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="banner__content col-12 col-xl-12">
+                <div class="banner__title">
+                    <h1 class="mb-5" style="text-align: center;">
+                        Pilotez Votre  <span class="text-primary">
+                                   IT     </span>à la vitesse   <span class="text-primary">
+                               de vos métiers  </span>
+
+                    </h1>
+                </div>
+                <div class="banner__description"></div>
+            </div>
+            <p style="text-align: center">    <img src='{{ asset('assets/img/bank/vs_dc.png') }}'></p>
+
+            <div class="row">
+
+                <div class="col-md-12 col-xl-6 d-flex mb-sm-5 flex-column mb-5 mb-xl-0">
+                    <h2 class="text-uppercase" style="text-align: right">RISQUES LIÉS À <br/> L’INFORMATIQUE CLASSIQUE </h2>
+
+                    <ul>
+                        <li>Risque de vol, de perte ou de fuites liées à l’emplacement physique de vos serveurs</li>
+
+
+                    </ul>
+                </div>
+
+
+                <div class="col-md-12 col-xl-6 d-flex mb-sm-5 flex-column mb-5 mb-xl-0">
+                    <h2 class="text-uppercase">Virtual <br/> Data Center</h2>
+
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+{% endblock %}

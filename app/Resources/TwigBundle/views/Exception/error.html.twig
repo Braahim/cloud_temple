@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <section class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="banner__content col-12 col-xl-10">
+                <div class="banner__title">
+                    <h1 class="mb-3">
+                        {% if status_code >= 500 %}
+                            <h1>500</h1>
+                        {% elseif status_code > 403 %}
+                            <h1>400</h1>
+                        {% elseif status_code == 403 %}
+
+                            <h1 style="color: red;">Error  <span class="text-primary">403 </span> </h1>
+                            <Br>
+                            <h2>Acces Not Granted</h2>
+                           <br>
+                            <h3> </h3>
+                        {% endif %}
+
+                        <span class="text-primary">
+                                   <Br><Br>  <Br>  <Br>  <Br>  <Br>  <Br> <Br> <Br> <Br>   </span>
+                    </h1>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="banner__bg img-to-lazy"
+         style="background-position: center center" data-src="../../../ctwwwmedias.blob.core.windows.net/default/2021/07/cloud-banner-1600x773.jpg"></div>
+    </section>
+
+
+
+
+
+{% endblock %}

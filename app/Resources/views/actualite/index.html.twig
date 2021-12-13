@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-xxl-8">
+                    <div class="banner__content">
+                        <div class="banner__title">
+                            <h1>Actualité</h1>
+                        </div>
+                        <div class="banner__description">Partageons ensemble les nouveaux enjeux sur le chemin d'une transformation numérique volontaire et pragmatique, au service du business.</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner__bg img-to-lazy" style="background-position: center center" data-src="{{ asset('assets/img/actualite_bg.jpg') }}"></div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-searchbar d-xl-inline-block mt-5 mb-lg-5">
+
+                <div class="form-group d-xl-flex mb-3 mb-xl-0 mr-xl-3">
+                    <input type="text" placeholder="Mots clés" value="" name="s" id="search" onkeyup="Search()"/>
+                </div>
+                <!--  <div class="form-group d-xl-flex form-select mb-3 mb-xl-0 mr-xl-3">
+                      <select name="category_name" id="category">
+                          <option value="0" selected="selected">Catégorie...</option>
+                          <option value="a-la-une" >A la une</option>
+                          <option value="agile" >Agile</option>
+                          <option value="all" >All</option>
+                          <option value="aws" >AWS</option>
+                          <option value="cloud" >Cloud</option>
+                          <option value="collaboration" >Collaboration</option>
+                          <option value="ctlife" >CTlife</option>
+                          <option value="ctlive" >CTlive</option>
+                          <option value="cybersecurite" >Cybersécurité</option>
+                          <option value="devops" >DevOps</option>
+                          <option value="devsecop" >DevSecOp</option>
+                          <option value="editeur" >éditeur</option>
+                          <option value="gilles-lamire" >Gilles Lamiré</option>
+                          <option value="microsoft" >Microsoft</option>
+                          <option value="microsoft-school" >Microsoft school</option>
+                          <option value="non-classifiee" >Non classifié(e)</option>
+                          <option value="office-365" >office 365</option>
+                          <option value="replay" >Replay</option>
+                          <option value="rex" >REX</option>
+                          <option value="securite" >Sécurité</option>
+                          <option value="technosphere" >Technosphère</option>
+                          <option value="transformation-numerique" >Transformation numérique</option>
+                          <option value="webinar" >Webinar</option>
+                      </select>
+                  </div>
+                  <button class="btn btn-primary m-sm-0" type="submit"><i class="fas fa-search"></i> Rechercher</button>-->
+
+
+            </div>
+            <div class="row">
+
+                {% for actualite in actualites %}
+                    <div class="col-12 col-lg-4 d-flex">
+
+                        <div class="card mb-5 target">
+                            <div class="card__header">
+                                <a href="">
+                                    <div class="card__featured-img img-to-lazy" data-src="{{ asset('assets/img/' ~ actualite.getPhoto()) }}"></div>
+                                </a>
+                            </div>
+                            <div class="card__body">
+                                <div class="font-size-regular mb-4">
+                                    <i class="icon ion-md-calendar mr-2"></i>
+                                    {{ actualite.dateCreation|date("d/m/y") }}
+                                </div>
+                                <h5>
+                                    <a href="">{{ actualite.title }}</a>
+                                </h5>
+                            </div>
+                            <div class="card__footer d-flex">
+                                <a href="{{ path('actualite_show', { 'id': actualite.id }) }}">
+                                    Lire la suite <i class="icon ion-md-arrow-forward" ></i></a>
+                                <div class="ml-auto">
+                                    <i class="icon ion-md-book mr-1"></i> <span class="font-size-regular">4 min</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{%  block javascripts %}
+    <script>
+        function Search() {
+            var input = document.getElementById("search");
+            var filter = input.value.toLowerCase();
+            var nodes = document.getElementsByClassName('target');
+
+            for (i = 0; i < nodes.length; i++) {
+                if (nodes[i].innerText.toLowerCase().includes(filter)) {
+                    nodes[i].style.display = "block";
+                } else {
+                    nodes[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+{% endblock %}

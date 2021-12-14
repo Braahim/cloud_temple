@@ -11,8 +11,8 @@ parameters:
     locales: [en, fr, es]
     image_directory: '%kernel.project_dir%/web/assets/img'
 framework:
-    fallback: "%locale%"
-    paths: ['%kernel.root_dir%/../src/AppBundle/Resources/translations']
+
+
     templating:
         engines: [ 'twig', 'php' ]
     #esi: ~

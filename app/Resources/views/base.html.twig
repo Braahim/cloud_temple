@@ -57,7 +57,9 @@
     />
     <meta
             property="og:description"
-            content="Cloud Temple est une entreprise de services numériques. Elle est spécialisée dans le la transformation, l’hébergement et l’infogérance d’applications critiques d’entreprise : la bonne stack applicative pour le bon enjeu métier !"
+            content="Cloud Temple est une entreprise de services numériques. Elle est spécialisée
+            dans le la transformation, l’hébergement et l’infogérance d’applications critiques d’entreprise :
+             la bonne stack applicative pour le bon enjeu métier !"
     />
 
     <title>Cloud Temple &#8211; Sécurité et transformation des systèmes d&#8217;information</title>
@@ -69,7 +71,7 @@
     <link rel='stylesheet' id='theme-css-css'  href="{{ asset('wp-content/themes/cloudtemple/build/bundle.css') }}" type='text/css' media='all' />
     <script type='text/javascript' id='wp-sentry-browser-js-extra'>
         /* <![CDATA[ */
-        var wp_sentry = {"dsn":"https:\/\/caad7a4fcaa042b79c9f505ae74b4819@o354824.ingest.sentry.io\/5379669","release":"1.0","environment":"production","content":{"tags":{"wordpress":"5.8.1","language":"fr-FR"}}};
+      //  var wp_sentry = {#"dsn":"https:\/\/caad7a4fcaa042b79c9f505ae74b4819@o354824.ingest.sentry.io\/5379669","release":"1.0","environment":"production","content":{"tags":{"wordpress":"5.8.1","language":"fr-FR"}}#};
         /* ]]> */
     </script>
     <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-sentry/public/wp-sentry-browser.min12f9.js?ver=3.10.0') }}" id='wp-sentry-browser-js' defer></script>
@@ -89,7 +91,7 @@
                 <ul class="top-menu">
 
                     <li class="nav__item">
-                        <a class="nav__link" href="">A propos</a>
+                        <a class="nav__link" href="{{ path('home_about') }}">A propos</a>
                     </li>
 
                     <li class="nav__item">
@@ -221,46 +223,89 @@
                 <ul class="navbar__menu">
 
                     <li class="nav__item">
-                        <a class="nav__link" href="{{ path('home_dataCenter') }}">
-                            Virtual Data <br> Center
-
-                        </a>
-                        <button role="button" class="nav__button"></button>
-
-
-                    </li>
-
-                    <li class="nav__item">
-                        <a class="nav__link" href="{{ path('home_infogerance') }}">
-                            Infogérance
-                        </a>
-                        <button role="button" class="nav__button"></button>
-
-
-                    </li>
-
-                    <li class="nav__item">
-                        <a class="nav__link" href="{{ asset('') }}">
-                            Messagerie Collaborative<br>Zimbra
-
-                        </a>
-                        <button role="button" class="nav__button"></button>
-
-
-                    </li>
-
-
-                    <li class="nav__item">
                         <a class="nav__link" href="{{ path('home_cloud') }}">
                             Cloud
-
+                            <i class="icon ion-ios-arrow-down"></i>
                         </a>
-                        <button role="button" class="nav__button"></button>
+                        <button role="button" class="nav__button"><i class="icon ion-ios-arrow-down"></i></button>
+                        <ul class="nav__dropdown">
+                            <li class="nav__item">
+                                <a class="nav__link" href="{{ path('home_cloud_strategie') }}">
+                                    Stratégie cloud
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="{{ path('home_cloud_public') }}">
+                                    Cloud public
+                                    <i class="icon ion-ios-arrow-down"></i>
+                                </a>
+                                <button role="button" class="nav__button"><i class="icon ion-ios-arrow-down"></i></button>
+                                <ul class="nav__dropdown nav__dropdown-sub">
+                                    <li class="nav__item">
+                                        <a class="nav__link" href="{{ path('home_cloud_public_azure') }}">Microsoft Azure</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a class="nav__link" href="{{ path('home_cloud_public_amazon') }}">Amazon Web Services</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="{{ path('home_cloud_souverain') }}">
+                                    Cloud Souverain
+                                    <i class="icon ion-ios-arrow-down"></i>
+                                </a>
+                                <button role="button" class="nav__button"><i class="icon ion-ios-arrow-down"></i></button>
+                                <ul class="nav__dropdown nav__dropdown-sub">
+                                    <li class="nav__item">
+                                        <a class="nav__link"
+                                           href="../services/cloud/transformation-si/assurer-la-conformite-secnumcloud-des-editeurs/index.html">
+                                            Virtual Data Center</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a class="nav__link"
+                                           href="../services/cloud/transformation-si/efficacite-collaborative-avec-microsoft-365/index.html">
+                                            Serveur Cloud Infogéré
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
 
+                        </ul>
+
+                    </li>
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="../services/infogerance-si/index.html">
+                            Infogérance
+                            <i class="icon ion-ios-arrow-down"></i>
+                        </a>
+                        <button role="button" class="nav__button"><i class="icon ion-ios-arrow-down"></i></button>
+                        <ul class="nav__dropdown">
+                            <li class="nav__item">
+                                <a class="nav__link" href="../services/infogerance-si/operation-24-7/index.html">
+                                    Opération 24/7
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="../services/infogerance-si/secops/index.html">
+                                    SecOps
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="../services/infogerance-si/finops/index.html">
+                                    FinOps
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="../services/infogerance-si/assistance-aux-utilisateurs/index.html">
+                                    Assistance aux utilisateurs
+                                </a>
+                            </li>
+                        </ul>
 
                     </li>
                     <li class="nav__item d-xl-none">
-                        <a class="nav__link" href="">A propos</a>
+                        <a class="nav__link" href="{{ path('home_about') }}">A propos</a>
                     </li>
                     <li class="nav__item d-xl-none">
                         <a class="nav__link" href="">Carrières</a>

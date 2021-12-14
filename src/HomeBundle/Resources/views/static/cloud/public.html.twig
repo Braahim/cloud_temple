@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="banner__content col-12 col-xl-10">
+                    <div class="banner__title">
+                        <h1 class="mb-3">
+                            Cloud
+                            <span class="text-primary">
+                                            public
+                                        </span>
+                        </h1>
+                    </div>
+                    <div class="banner__description">Rapide, peu coûteux à mettre en place et s’adaptant rapidement à l’augmentation de vos besoins, le cloud public est aujourd’hui une solution adaptée aux enjeux stratégiques des entreprises.
+                        Partenaires de fournisseurs tels que Microsoft Azure ou Amazon Web services, nous vous accompagnons dans la stratégie et dans la mise en œuvre de ces solutions.</div>
+                </div>
+            </div>
+        </div>
+        <div class="banner__bg img-to-lazy" style="background-position: center center" data-src="../../../../ctwwwmedias.blob.core.windows.net/default/2021/03/secnumcloud-banner-1600x1333.jpg"></div>
+    </section>
+
+
+    <div class="section-breadcrumb">
+        <div class="container">
+            <a href="{{ path('home_cloud') }}"><i class="icon ion-md-arrow-back"></i> Cloud</a>
+        </div>
+    </div>
+
+
+    <div class="main-container">
+        <section class="section-content">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-5  mb-5">
+                        <div class="img-illustrated ">
+                            <div class="pattern pattern-dots pattern-t-r"></div>
+                            <div class="pattern pattern-blob pattern-b-l"></div>
+                            <img
+                                    class="img-to-lazy"
+                                    width="700"
+                                    height="700"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                    data-src="../../../../ctwwwmedias.blob.core.windows.net/default/2021/04/bg-microsoft-azure-700x700.jpg"
+                                    alt=""
+                            >
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-7  mb-5">
+                        <h2>Microsoft Azure</h2>
+                        <div class="mb-4">Notre engagement auprès de Microsoft, ainsi que notre expertise pointue et reconnue sur Azure, ont contribué à forger une alliance stratégique et incontournable sur le marché.                                                                                                                                                                                                                                                                                                     </div>
+                        <a class="btn btn-primary" href="{{ path('home_cloud_public_azure') }}">En savoir plus</a>
+                    </div>
+                </div>                                <div class="row align-items-center">
+                    <div class="col-12 col-lg-5  order-lg-12 mb-5">
+                        <div class="img-illustrated ">
+                            <div class="pattern pattern-dots pattern-t-r"></div>
+                            <div class="pattern pattern-blob pattern-b-l"></div>
+                            <img
+                                    class="img-to-lazy"
+                                    width="700"
+                                    height="700"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                    data-src="../../../../ctwwwmedias.blob.core.windows.net/default/2021/03/bg-aws-700x700.jpg"
+                                    alt=""
+                            >
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-7  order-lg-1 mb-5">
+                        <h2>Amazon Web Services</h2>
+                        <div class="mb-4">Nous nous sommes associés à AWS afin de créer un solide partenariat basé sur l'innovation et les approches cloud natives.  </div>
+                        <a class="btn btn-primary" href="{{ path('home_cloud_public_amazon') }}">En savoir plus</a>
+                    </div>
+                </div>                            </div>
+        </section>
+
+    </div>
+
+
+
+{%  endblock %}

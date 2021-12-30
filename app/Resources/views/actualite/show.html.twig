@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
 
+{% block meta %}
+<meta name="description" content="{{ actualite.meta }}" />
+{% endblock %}
 {% block body %}
     <div class="main-wrapper">
 
@@ -37,11 +40,18 @@
 
 
 
-
-
-
-
+                        <h3>{{ actualite.subtitle1 }}</h3>
                         <p>{{ actualite.subject }}</p>
+
+
+                        <br>
+                        <h3>{{ actualite.subtitle2 }}</h3>
+                        <p>{{ actualite.subject2 }}</p>
+
+
+                        <br>
+                        <h3>{{ actualite.subtitle3 }}</h3>
+                        <p>{{ actualite.subject3 }}</p>
 
                         <div class="row single-footer">
                             <div class="col single-footer__categories">

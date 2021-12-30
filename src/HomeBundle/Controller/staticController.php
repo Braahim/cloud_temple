@@ -111,7 +111,50 @@ class staticController extends  Controller
      */
     public function infogeranceAction()
     {
-        return $this->render('@Home/static/infoGerance.html.twig');
+        return $this->render('@Home/static/infogerance/infoGerance.html.twig');
+    }
+    /**
+     *
+     *
+     * @Route("/services/infogerance/operation-24-7", name="home_infogerance_operation")
+     * @Method({"GET", "POST"})
+     */
+    public function infogerance_operationAction()
+    {
+        return $this->render('@Home/static/infogerance/operation24.html.twig');
+    }
+
+    /**
+     *
+     *
+     * @Route("/services/infogerance/secops", name="home_infogerance_secops")
+     * @Method({"GET", "POST"})
+     */
+    public function infogerance_secopsAction()
+    {
+        return $this->render('@Home/static/infogerance/secops.html.twig');
+    }
+
+    /**
+     *
+     *
+     * @Route("/services/infogerance/finops", name="home_infogerance_finops")
+     * @Method({"GET", "POST"})
+     */
+    public function infogerance_finopsAction()
+    {
+        return $this->render('@Home/static/infogerance/finops.html.twig');
+    }
+
+    /**
+     *
+     *
+     * @Route("/services/infogerance/assistance", name="home_infogerance_assistance")
+     * @Method({"GET", "POST"})
+     */
+    public function infogerance_assistanceAction()
+    {
+        return $this->render('@Home/static/infogerance/assistance.html.twig');
     }
 
     /**
@@ -123,6 +166,17 @@ class staticController extends  Controller
     public function dataCenterAction()
     {
         return $this->render('@Home/static/dataCenter.html.twig');
+    }
+
+    /**
+     *
+     *
+     * @Route("/services/infogere-serveur-cloud", name="home_infogere")
+     * @Method({"GET", "POST"})
+     */
+    public function serveurInfogereAction()
+    {
+        return $this->render('@Home/static/serveurInfogere.html.twig');
     }
 
     /**

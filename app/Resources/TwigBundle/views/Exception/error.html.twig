@@ -10,9 +10,9 @@
                 <div class="banner__title">
                     <h1 class="mb-3">
                         {% if status_code >= 500 %}
-                            <h1>500</h1>
+                            <h1 style="color: red;">Error  <span class="text-primary"> </span> </h1>
                         {% elseif status_code > 403 %}
-                            <h1>400</h1>
+                            <h1 style="color: red;">Error  <span class="text-primary"> </span> </h1>
                         {% elseif status_code == 403 %}
 
                             <h1 style="color: red;">Error  <span class="text-primary">403 </span> </h1>

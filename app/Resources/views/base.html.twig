@@ -258,12 +258,12 @@
                                 <ul class="nav__dropdown nav__dropdown-sub">
                                     <li class="nav__item">
                                         <a class="nav__link"
-                                           href="../services/cloud/transformation-si/assurer-la-conformite-secnumcloud-des-editeurs/index.html">
+                                           href="{{ path('home_dataCenter') }}">
                                             Virtual Data Center</a>
                                     </li>
                                     <li class="nav__item">
                                         <a class="nav__link"
-                                           href="../services/cloud/transformation-si/efficacite-collaborative-avec-microsoft-365/index.html">
+                                           href="{{ path('home_infogere') }}">
                                             Serveur Cloud Infogéré
                                         </a>
                                     </li>
@@ -275,29 +275,29 @@
                     </li>
 
                     <li class="nav__item">
-                        <a class="nav__link" href="../services/infogerance-si/index.html">
+                        <a class="nav__link" href="{{ path('home_infogerance') }}">
                             Infogérance
                             <i class="icon ion-ios-arrow-down"></i>
                         </a>
                         <button role="button" class="nav__button"><i class="icon ion-ios-arrow-down"></i></button>
                         <ul class="nav__dropdown">
                             <li class="nav__item">
-                                <a class="nav__link" href="../services/infogerance-si/operation-24-7/index.html">
+                                <a class="nav__link" href="{{ path('home_infogerance_operation') }}">
                                     Opération 24/7
                                 </a>
                             </li>
                             <li class="nav__item">
-                                <a class="nav__link" href="../services/infogerance-si/secops/index.html">
+                                <a class="nav__link" href="{{ path('home_infogerance_secops') }}">
                                     SecOps
                                 </a>
                             </li>
                             <li class="nav__item">
-                                <a class="nav__link" href="../services/infogerance-si/finops/index.html">
+                                <a class="nav__link" href="{{ path('home_infogerance_finops') }}">
                                     FinOps
                                 </a>
                             </li>
                             <li class="nav__item">
-                                <a class="nav__link" href="../services/infogerance-si/assistance-aux-utilisateurs/index.html">
+                                <a class="nav__link" href="{{ path('home_infogerance_assistance') }}">
                                     Assistance aux utilisateurs
                                 </a>
                             </li>
@@ -344,7 +344,8 @@
         </div>
     </nav>
 </header>
-
+{% block meta %}
+{% endblock meta %}
 <body>
 {% block body %}
 {%  endblock body %}

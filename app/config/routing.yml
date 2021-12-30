@@ -22,7 +22,7 @@ app:
 back:
     resource: '@AppBundle/Controller/backController.php'
     type: annotation
-    prefix: /admin
+    prefix: /gestion-back
 
 home_static_pages:
     resource: '@HomeBundle/Controller/staticController.php'
@@ -31,6 +31,9 @@ home_static_pages:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+
 
 
 

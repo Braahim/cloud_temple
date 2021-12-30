@@ -22,7 +22,7 @@ security:
                 csrf_token_generator: security.csrf.token_manager
                 use_forward: false
                 always_use_default_target_path: true
-                default_target_path: /admin
+                default_target_path: /gestion-back
 
 
             logout: true
@@ -31,4 +31,4 @@ security:
 
     access_control:
         - { path: '^/register', roles: [ROLE_ADMIN] }
-        - { path: '^/admin', roles: [ROLE_USER,ROLE_ADMIN] }
+        - { path: '^/gestion-back', roles: [ROLE_USER,ROLE_ADMIN] }

@@ -76,37 +76,6 @@ sensio_framework_extra:
    router:
         annotations: false
 
-easy_admin:
-    design :
-        color_scheme : 'light'
-
-    entities:
-        carriere :
-            label : Carriere
-            class : HomeBundle\Entity\carriere
-            list:
-                max_results: 20
-                title: "Carrieres les plus recents"
-            search:
-                fields: [ 'titre', 'profil', 'salaire','localisation' ]
-
-
-
-        contact :
-            class : HomeBundle\Entity\contact
-            list:
-                max_results: 20
-                title: "Contacts les plus recents"
-
-        actualite :
-                    class : HomeBundle\Entity\actualite
-                    list:
-                        max_results: 20
-                        title: "Actualités les plus récentes"
-
-
-
-
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main

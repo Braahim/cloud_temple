@@ -26,8 +26,13 @@ class actualiteType extends AbstractType
                 'required' => false,
 
 
-            ))
-            ->add('subject',TextareaType::class);
+            ))->add('sub_title1')
+            ->add('subject',TextareaType::class)
+            ->add('sub_title2')
+            ->add('subject2',TextareaType::class)
+            ->add('sub_title3')
+            ->add('subject3',TextareaType::class)
+            ->add('meta',TextareaType::class);
     }/**
      * {@inheritdoc}
      */

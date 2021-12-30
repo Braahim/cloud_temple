@@ -26,7 +26,7 @@ class carriereController extends Controller
 
         $carrieres = $em->getRepository('HomeBundle:carriere')->findAll();
 
-        return $this->render('@Home/carriere.html.twig', array(
+        return $this->render('@Home/static/carriere.html.twig', array(
             'carrieres' => $carrieres,
         ));
     }

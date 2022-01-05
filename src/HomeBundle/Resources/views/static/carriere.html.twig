@@ -14,21 +14,7 @@
                                 <div class="form-group d-xl-flex mb-xl-0 mr-xl-3">
                                     <input type="text" placeholder="Métier, mots clés" value="" name="s" id="search" onkeyup="Search()"/>
                                 </div>
-<!--
-                                <div class="form-group d-xl-flex form-select mb-xl-0 mr-xl-3">
-                                    <select name="contract_type" id="contract_type">
-                                        <option value="0" selected="selected">Type de contrat</option>
-                                        <option value="alternance" >Alternance</option>
-                                        <option value="cdd" >CDD</option>
-                                        <option value="cdi" >CDI</option>
-                                    </select>
-                                </div>
-                                <button class="btn btn-primary mb-3 mb-xl-0 mr-xl-3" type="submit">
-                                    <i class="icon ion-md-search"></i>
-                                </button>
-                                <a href="index.html" title="Réinitialiser le formulaire"><span class="d-block d-xl-none">Réinitialiser le formulaire</span><i class="icon ion-ios-refresh d-none d-xl-block font-size-xx-large"></i></a>
-                                <input type="hidden" name="post_type" value="jobs"/>
-                                <input type="hidden" name="lang" value="fr"/>-->
+
                         </div>
                     </div>
                 </div>
@@ -42,6 +28,10 @@
         <div class="container">
             <div class="row">
                 {% for carriere in carrieres %}
+                   <div style="text-align: center;"> <br><br>
+
+                       <h2 id="empty"></h2></div>
+
                 <div class="col-12 col-lg-4 d-flex">
                     <div class="card mb-5 target ">
                         <div class="card__body ">
@@ -109,12 +99,16 @@
             var input = document.getElementById("search");
             var filter = input.value.toLowerCase();
             var nodes = document.getElementsByClassName('target');
+            var msg = document.getElementById("empty");
 
             for (i = 0; i < nodes.length; i++) {
                 if (nodes[i].innerText.toLowerCase().includes(filter)) {
                     nodes[i].style.display = "block";
+                    msg.innerText = "";
+
                 } else {
                     nodes[i].style.display = "none";
+                    msg.innerText = "Introuvable";
                 }
             }
         }

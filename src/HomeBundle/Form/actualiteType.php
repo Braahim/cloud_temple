@@ -16,7 +16,7 @@ class actualiteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('title')
-            ->add('photo',FileType::class, array(
+            ->add('photo',FileType::class,array(
                 'data_class' => null ,
                 // unmapped means that this field is not associated to any entity property
                 //'mapped' => false,

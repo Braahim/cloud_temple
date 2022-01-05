@@ -16,53 +16,44 @@
 
                     </div>
                 </div>
-                <video class="banner-slider__video" autoplay muted loop playsinline src="assets/videos/home.mp4" type="video/mp4"></video>
+                <video class="banner-slider__video" autoplay muted loop playsinline src="{{ asset('assets/videos/home1.mp4') }}" type="video/mp4"></video>
             </div>
         </section>
 
         <section class="section-customers">
             <div class="container">
-                <div class="customers-slider">
+                <div class="customers-slider" style="background-color: white;">
 
-                    <!--       <img class="customers-slider__logo w-95" data-lazy="https://ctwwwmedias.blob.core.windows.net/default/2021/07/abertis.svg" alt="Abertis" />
-
-                           <img src="assets/img/clients/zitouna.png" class="customers-slider__logo w-95" alt="">
+                    <img data-lazy="{{ asset('assets/img/clients/zitouna.png') }}" class="customers-slider__logo w-95" alt="">
 
 
 
-                           <img src="assets/img/clients/bouzgenda.png" class="customers-slider__logo w-95" alt="">
+                    <img data-lazy="{{ asset('assets/img/clients/bouzgenda.png') }}" class="customers-slider__logo w-95" alt="">
 
 
-                           <img src="assets/img/clients/hach.jpg" class="customers-slider__logo w-95" alt="">
+                    <img data-lazy="{{ asset('assets/img/clients/hach.jpg') }}" class="customers-slider__logo w-95" alt="">
 
 
-                           <img src="assets/img/clients/pgh.jpg" class="customers-slider__logo w-95" alt="">
+                    <img data-lazy="{{ asset('assets/img/clients/pgh.jpg') }}" class="customers-slider__logo w-95" alt="">
 
 
-                           <img src="assets/img/clients/whitecape2.png" class="customers-slider__logo w-95" alt="">
+                    <img data-lazy="{{ asset('assets/img/clients/whitecape2.png') }}" class="customers-slider__logo w-95" alt="">
 
 
-                           <img src="assets/img/clients/attijari.png" class="customers-slider__logo w-95" alt="">
-
-
-
-                           <img src="assets/img/clients/avril.jpg" class="customers-slider__logo w-95" alt="">
-
-
-                           <img src="assets/img/clients/pgi.png" class="customers-slider__logo w-95" alt="">
+                    <img data-lazy="{{ asset('assets/img/clients/attijari.png') }}" class="customers-slider__logo w-95" alt="">
 
 
 
-                           <img src="assets/img/clients/virgo.png" class="customers-slider__logo w-95" alt=""> -->
+                    <img data-lazy="{{ asset('assets/img/clients/avril.jpg') }}" class="customers-slider__logo w-95" alt="">
+
+
+                    <img data-lazy="{{ asset('assets/img/clients/pgi.png') }}" class="customers-slider__logo w-95" alt="">
+
+
+
+                    <img data-lazy="{{ asset('assets/img/clients/virgo.png') }}" class="customers-slider__logo w-95" alt="">
 
                 </div>
-                {% for flashMessage in app.session.flashbag.get('notice') %}
-
-                    <div class="alert alert-success">
-                 <p style="text-align: center;">{{ flashMessage }}</p>
-                    </div>
-
-                {% endfor %}
             </div>
         </section>
 
@@ -83,8 +74,12 @@
                                 <div class="card mb-5">
                                     <div class="card__body">
                                         <img class="mb-3" width="80" src="https://ctwwwmedias.blob.core.windows.net/default/2021/04/icon-cloud-souverain.svg" alt="" />
-                                        <h4><a href="services/cloud/index.html">Cloud</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                                        <h4><a href="{{ path('home_cloud') }}">Cloud</a></h4>
+                                        <p>De la conception au déploiement en passant par le maintien en condition
+                                            opérationnelle de vos applications, nous vous accompagnons dans votre transformation
+                                            numérique via le Cloud (public, hybride ou privé) en vous garantissant un haut niveau de
+                                            sécurité et de fiabilité.
+                                        </p>
                                     </div>
                                     <div class="card__footer">
                                         <a href="{{ path('home_cloud') }}" class="read-more">En savoir plus <i class="icon ion-md-arrow-forward"></i></a>
@@ -95,24 +90,16 @@
                                 <div class="card mb-5">
                                     <div class="card__body">
                                         <img class="mb-3" width="80"  src="https://img.icons8.com/nolan/64/data-center.png"/>
-                                        <h4><a href="">Virtual DC</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        <h4><a href="{{ path('home_dataCenter') }}">Cloud Souverain</a></h4>
+                                        <p>Avec l’ambition de devenir un des leaders du Cloud de confiance de l’État, nos services d’hébergement
+                                            souverains répondent aux plus fortes exigences de sécurité du marché français et européen.
+                                            Son design simplifie le déploiement de votre stratégie Infrastructure-as-Code et vous offre
+                                            une capacité d’hybridation native avec les clouds publics Microsoft Azure et AWS. Plus que de
+                                            l’hébergement, nous vous accompagnons sur la modernisation de vos applications et leur maintien en conditions opérationnelles.
+                                            Le tout avec une empreinte carbone maîtrisée…</p>
                                     </div>
                                     <div class="card__footer">
                                         <a href="{{ path('home_dataCenter') }}" class="read-more">En savoir plus <i class="icon ion-md-arrow-forward"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-xl-4 d-flex">
-                                <div class="card mb-5">
-                                    <div class="card__body">
-
-                                        <img class="mb-3" width="80" src="https://img.icons8.com/ios-filled/100/000000/collaboration.png" alt="" />
-                                        <h4><a href="">Messagerie Collaborative</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    </div>
-                                    <div class="card__footer">
-                                        <a href="" class="read-more">En savoir plus <i class="icon ion-md-arrow-forward"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -121,8 +108,10 @@
                                 <div class="card mb-5">
                                     <div class="card__body">
                                         <img class="mb-3" width="80" src="https://ctwwwmedias.blob.core.windows.net/default/2021/04/icon-infogerance-si.svg" alt="" />
-                                        <h4><a href="services/infogerance-si/index.html">Infogérance</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        <h4><a href="{{ path('home_infogerance') }}">Infogérance</a></h4>
+                                        <p>Quelques soient vos enjeux d’externalisation : carve-out, innovation, sécurité, coût...
+                                            votre partenaire informatique est crucial pour que vous puissiez vous consacrer
+                                            sur votre métier en toute sérénité. Vos intérêts sont notre priorité, vous apporter de la valeur notre leitmotiv.</p>
                                     </div>
                                     <div class="card__footer">
                                         <a href="{{ path('home_infogerance') }}" class="read-more">En savoir plus <i class="icon ion-md-arrow-forward"></i></a>
@@ -136,235 +125,142 @@
             </div>
         </section>
 
-        <section class="section-testimonies">
+
+        <h2 style="text-align: center;">Nos experts vous garantissent un projet <br> <span style="color: #41A890">clé en main </span>avec engagement sur le résultat</h2><br>
+
+
+        <section class="section-newsletter" style="text-align: center;">
+            <br><br>
             <div class="container">
-                <div class="testimonies">
-                    <!--    <div class="testimony">
-                      <div class="row align-items-center">
-                        <div class="col-12 col-lg-6 mb-sm-5 col-desc">
-                          <div class="heading">
-                            <div class="heading__subtitle">
-                              Témoignages
-                            </div>
-                            <h2>Ils parlent de nous</h2>
-                          </div>
-                          <blockquote class="testimony__card">
-                            <div class="testimony__author">Thibault</div>
-                            <div class="testimony__role">
-                              Energy Efficiency Engineer
-                            </div>
-                            <div class="testimony__content">
-                              Avec Cloud Temple nous avons conçu la bonne plateforme avec les services Cloud IOT de Microsoft Azure. Nous sommes désormais en capacité de proposer à nos clients une solution d'optimisation en temps réel de la consommation énergétique.
-                            </div>
-                          </blockquote>
-                        </div>
-                        <div class="col-12 col-lg-6 col-img">
-                          <div class="img-illustrated">
-                            <div class="img-illustrated__card">
-                              <img
-                                class="img-fluid"
-                                src="https://ctwwwmedias.blob.core.windows.net/default/2021/04/e-on_1.svg"
-                                alt=""
-                              />
-                            </div>
-                            <img
-                              class="img-to-lazy"
-                              width="700"
-                              height="700"
-                              src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                              data-src="https://ctwwwmedias.blob.core.windows.net/default/2021/04/bg-eon-700x700.jpeg"
-                              alt=""
-                            />
-                            <div class="pattern pattern-blob pattern-b-r pattern-lg"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>-->
-                    <!--      <div class="testimony">
-                        <div class="row align-items-center">
-                          <div class="col-12 col-lg-6 mb-sm-5 col-desc">
-                            <div class="heading">
-                              <div class="heading__subtitle">
-                                Témoignages
-                              </div>
-                              <h2>Ils parlent de nous</h2>
-                            </div>
-                            <blockquote class="testimony__card">
-                              <div class="testimony__author">Ying-Yu</div>
-                              <div class="testimony__role">
-                                Chief Executive Officer
-                              </div>
-                              <div class="testimony__content">
-                                Notre métier est de délivrer à nos clients transporteurs les solutions techniques et les moyens de paiement nécessaires pour circuler sur l’ensemble des réseaux à péage en Europe.
-                La solution clé en main de Cloud Temple nous permet de nous concentrer pleinement sur cet objectif.
-                              </div>
-                            </blockquote>
-                          </div>
-                          <div class="col-12 col-lg-6 col-img">
-                            <div class="img-illustrated">
-                              <div class="img-illustrated__card">
-                                <img
-                                  class="img-fluid"
-                                  src="https://ctwwwmedias.blob.core.windows.net/default/2021/04/eurotoll.svg"
-                                  alt=""
-                                />
-                              </div>
-                              <img
-                                class="img-to-lazy"
-                                width="700"
-                                height="700"
-                                src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                                data-src="https://ctwwwmedias.blob.core.windows.net/default/2021/04/bg-eurotoll-1-700x700.jpg"
-                                alt=""
-                              />
-                              <div class="pattern pattern-blob pattern-b-r pattern-lg"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>-->
-                    <!--         <div class="testimony">
-                           <div class="row align-items-center">
-                             <div class="col-12 col-lg-6 mb-sm-5 col-desc">
-                               <div class="heading">
-                                 <div class="heading__subtitle">
-                                   Témoignages
-                                 </div>
-                                 <h2>Ils parlent de nous</h2>
-                               </div>
-                               <blockquote class="testimony__card">
-                                 <div class="testimony__author">Olivier</div>
-                                 <div class="testimony__role">
-                                   Chief Information Officer
-                                 </div>
-                                 <div class="testimony__content">
-                                   La sécurité et le service clients sont des enjeux majeurs pour un transporteur aérien. Avec Cloud Temple, notre IT est entre de bonnes mains ! Nous pouvons nous concentrer sur notre métier.
-                                 </div>
-                               </blockquote>
-                             </div>
-                             <div class="col-12 col-lg-6 col-img">
-                               <div class="img-illustrated">
-                                 <div class="img-illustrated__card">
-                                   <img
-                                     class="img-fluid"
-                                     src="https://ctwwwmedias.blob.core.windows.net/default/2021/04/corsair.svg"
-                                     alt=""
-                                   />
-                                 </div>
-                                 <img
-                                   class="img-to-lazy"
-                                   width="700"
-                                   height="700"
-                                   src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                                   data-src="https://ctwwwmedias.blob.core.windows.net/default/2021/04/bg-corsair-1-700x700.jpg"
-                                   alt=""
-                                 />
-                                 <div class="pattern pattern-blob pattern-b-r pattern-lg"></div>
-                               </div>
-                             </div>
-                           </div>
-                         </div>-->
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="https://img.icons8.com/ios/100/000000/cloud-refresh--v1.png"/>
+                        <br><br>
+                        <h4>MIGRATION EN DOUCEUR</h4>
+<p style="color: white;">
+    Nous nous adaptons à vos contraintes pour assurer une migration en douceur de tout votre SI</p>
+
+
+
+                    </div><div class="col-md-4">
+                        <img src="https://img.icons8.com/ios/100/000000/telescope.png"/>
+                        <br><br>
+                        <h4>SUPERVISION ET INFOGERANCE</h4>
+<p style="color: white;">
+    Nos équipes 24/7 assurent la gestion d’un système d’information avec respect des SLA client </p>
+
+
+
+                    </div><div class="col-md-4">
+                        <img src="https://img.icons8.com/ios/100/000000/marker--v1.png"/>
+                        <br><br>
+                        <h4>CLOUD SOUVERAIN</h4>
+<p style="color: white;">
+    Les avantages du Cloud Public alliés aux garanties du Cloud Privé le tout dans un Cloud Souverain</p>
+
+
+
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!--<section class="section-news bg-silver">
-          <div class="container">
-            <div class="heading text-center">
-              <div class="heading__title">
-                <div class="heading__subtitle">
-                  Le blog
+
+        <section class="section-testimonies">
+            <div class="container">
+                <div class="testimonies">
+                    <div class="testimony">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-lg-6 mb-sm-5 col-desc">
+                                <div class="heading">
+                                    <div class="heading__subtitle">
+                                        Témoignages
+                                    </div>
+                                    <h2>Ils parlent de nous</h2>
+                                </div>
+                                <blockquote class="testimony__card">
+                                    <div class="testimony__author">Hassen Saadi</div>
+                                    <div class="testimony__role">
+                                        DSI Groupe Hachicha
+                                    </div>
+                                    <div class="testimony__content">
+                                         Groupe Hachicha a bâti sa croissance sur des valeurs fortes, centrées sur l’engagement et la satisfaction client.
+                                        Afin de s’aligner sur ces objectifs, le groupe a fait le choix stratégique
+                                        d’opter pour une IaaS (Infrastructure as a Service) à travers l’offre phare de Datacenter Virtuel fournie par Cloud Temple Tunisia.
+                                    </div>
+                                </blockquote>
+                            </div>
+                            <div class="col-12 col-lg-6 col-img">
+                                <div class="img-illustrated">
+                                    <div class="img-illustrated__card">
+                                        <img
+                                                class="img-fluid"
+                                                src="{{ asset('assets/img/logo_groupe_hachicha.png') }}"
+                                                alt=""
+                                        />
+                                    </div>
+                                    <img
+                                            class="img-to-lazy"
+                                            width="700"
+                                            height="700"
+                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                            data-src="{{ asset('assets/img/ble.jpg') }}"
+                                            alt=""
+                                    />
+                                    <div class="pattern pattern-blob pattern-b-r pattern-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimony">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-lg-6 mb-sm-5 col-desc">
+                                <div class="heading">
+                                    <div class="heading__subtitle">
+                                        Témoignages
+                                    </div>
+                                    <h2>Ils parlent de nous</h2>
+                                </div>
+                                <blockquote class="testimony__card">
+                                    <div class="testimony__author">Bassem Romdhani</div>
+                                    <div class="testimony__role">
+                                        DSI Adjoint Poullina Groupe
+                                    </div>
+                                    <div class="testimony__content">
+                                         Le passage au Cloud est le meilleur choix qu’une DSI puisse faire.
+                                        Considérée par le passé comme un frein au passage au Cloud, la sécurité représente désormais un argument de pointe qui pousse
+                                        les entreprises à franchir le pas plus facilement.
+                                        Les données sont en effet plus sécurisées dans le nuage que dans nos propres salles serveurs.
+                                    </div>
+                                </blockquote>
+                            </div>
+                            <div class="col-12 col-lg-6 col-img">
+                                <div class="img-illustrated">
+                                    <div class="img-illustrated__card">
+                                        <img
+                                                class="img-fluid"
+                                                src="{{ asset('assets/img/poulina.png') }}"
+                                                alt=""
+                                        />
+                                    </div>
+                                    <img
+                                            class="img-to-lazy"
+                                            width="700"
+                                            height="700"
+                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                            data-src="https://ctwwwmedias.blob.core.windows.net/default/2021/04/bg-eurotoll-1-700x700.jpg"
+                                            alt=""
+                                    />
+                                    <div class="pattern pattern-blob pattern-b-r pattern-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <h2>Dernières nouvelles</h2>
-              </div>
-              <div class="heading__description">
-                Partageons ensemble les nouveaux enjeux sur le chemin d'une transformation numérique volontaire et pragmatique, au service du business.
-              </div>
             </div>
-            <div class="row justify-content-center">
+        </section>
 
-              <div class="col-12 col-lg-4 d-flex">
-            <div class="card mb-5">
-                <div class="card__header">
-                    <a href="lpr-la-palette-rouge-specialiste-europeen-de-la-location-gestion-de-palettes-choisit-cloud-temple-pour-mener-a-bien-un-vaste-projet-de-migration-dans-le-cloud/index.html">
-                        <div class="card__featured-img img-to-lazy" data-src="https://ctwwwmedias.blob.core.windows.net/default/2021/10/Visuel-LPR-1024x323.jpg"></div>
-                    </a>
-                </div>
-                <div class="card__body">
-                    <div class="font-size-regular mb-4">
-                        <i class="icon ion-md-calendar mr-2"></i>
-                        14/10/2021
-                    </div>
-                    <h5>
-                        <a href="lpr-la-palette-rouge-specialiste-europeen-de-la-location-gestion-de-palettes-choisit-cloud-temple-pour-mener-a-bien-un-vaste-projet-de-migration-dans-le-cloud/index.html">LPR-La Palette Rouge, spécialiste européen de la location-gestion de palettes, choisit Cloud Temple pour mener à bien un vaste projet de migration dans le cloud</a>
-                    </h5>
-                </div>
-                <div class="card__footer d-flex">
-                    <a href="lpr-la-palette-rouge-specialiste-europeen-de-la-location-gestion-de-palettes-choisit-cloud-temple-pour-mener-a-bien-un-vaste-projet-de-migration-dans-le-cloud/index.html" class="read-more">Lire la suite <i class="icon ion-md-arrow-forward"></i></a>
-                    <div class="ml-auto">
-                                        <i class="icon ion-md-book mr-1"></i> <span class="font-size-regular">4 min</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-              <div class="col-12 col-lg-4 d-flex">
-            <div class="card mb-5">
-                <div class="card__header">
-                    <a href="cloud-temple-obtient-la-competence-ec2-for-windows-server-service-delivery-dans-le-cadre-de-son-partenariat-avec-aws/index.html">
-                        <div class="card__featured-img img-to-lazy" data-src="https://ctwwwmedias.blob.core.windows.net/default/2021/07/CT-obtient-la-comp‚tence-EC2-for-Windows-server-service-delivery-dans-le-cadre-de-son-partenariat-avec-AWS-1024x688.png"></div>
-                    </a>
-                </div>
-                <div class="card__body">
-                    <div class="font-size-regular mb-4">
-                        <i class="icon ion-md-calendar mr-2"></i>
-                        21/07/2021
-                    </div>
-                    <h5>
-                        <a href="cloud-temple-obtient-la-competence-ec2-for-windows-server-service-delivery-dans-le-cadre-de-son-partenariat-avec-aws/index.html">Cloud Temple obtient la compétence &#8220;EC2 FOR WINDOWS SERVER SERVICE DELIVERY&#8221; dans le cadre de son partenariat avec AWS</a>
-                    </h5>
-                </div>
-                <div class="card__footer d-flex">
-                    <a href="cloud-temple-obtient-la-competence-ec2-for-windows-server-service-delivery-dans-le-cadre-de-son-partenariat-avec-aws/index.html" class="read-more">Lire la suite <i class="icon ion-md-arrow-forward"></i></a>
-                    <div class="ml-auto">
-                                        <i class="icon ion-md-book mr-1"></i> <span class="font-size-regular">1 min</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-              <div class="col-12 col-lg-4 d-flex">
-            <div class="card mb-5">
-                <div class="card__header">
-                    <a href="enedis-confie-a-cloud-temple-le-developpement-dune-application-de-pilotage-centralisee-de-ses-activites/index.html">
-                        <div class="card__featured-img img-to-lazy" data-src="https://ctwwwmedias.blob.core.windows.net/default/2021/07/ENEDIS-1024x682.png"></div>
-                    </a>
-                </div>
-                <div class="card__body">
-                    <div class="font-size-regular mb-4">
-                        <i class="icon ion-md-calendar mr-2"></i>
-                        06/07/2021
-                    </div>
-                    <h5>
-                        <a href="enedis-confie-a-cloud-temple-le-developpement-dune-application-de-pilotage-centralisee-de-ses-activites/index.html">ENEDIS confie à Cloud Temple le développement d&#8217;une application de pilotage centralisée de ses activités</a>
-                    </h5>
-                </div>
-                <div class="card__footer d-flex">
-                    <a href="enedis-confie-a-cloud-temple-le-developpement-dune-application-de-pilotage-centralisee-de-ses-activites/index.html" class="read-more">Lire la suite <i class="icon ion-md-arrow-forward"></i></a>
-                    <div class="ml-auto">
-                                        <i class="icon ion-md-book mr-1"></i> <span class="font-size-regular">4 min</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-                  </div>
-            <div class="text-center">
-              <a href="actualite/index.html" class="btn btn-primary">Toutes les news</a>
-            </div>
-          </div>
-        </section>-->
 
         <section class="section-about">
             <div class="container">

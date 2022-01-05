@@ -44,9 +44,10 @@
                                             <th>Description</th>
                                             <th>Profil</th>
                                             <th>Localisation</th>
-                                            <th>Salaire</th>
                                             <th>Disponiblité</th>
                                             <th>Date création</th>
+                                            <th>meta</th>
+
 
                                             <th>Actions</th>
                                         </tr>
@@ -59,9 +60,10 @@
                                                 <td>{{ c.description }}</td>
                                                 <td>{{ c.profil }}</td>
                                                 <td>{{ c.locatisation }}</td>
-                                                <td>{{ c.salaire }}</td>
                                                 <td>{{ c.disponnibilite }}</td>
                                                 <td> {{ c.createdAt|date("d/m/y") }}</td>
+                                                <td>{{ c.meta }}</td>
+
                                                 <td>
                                                     <ul>
                                                         <li>

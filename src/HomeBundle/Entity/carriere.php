@@ -39,6 +39,28 @@ class carriere
      */
     private $createdAt;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="meta", type="text",  length=65535)
+     */
+    private $meta;
+
+    /**
+     * @return string
+     */
+    public function getMeta()
+    {
+        return $this->meta;
+    }
+
+    /**
+     * @param string $meta
+     */
+    public function setMeta($meta)
+    {
+        $this->meta = $meta;
+    }
 
 
     /**
@@ -66,11 +88,6 @@ class carriere
      */
     private $locatisation;
 
-    /**
-     * @var double
-     * @ORM\Column(name="salaire", type="integer")
-     */
-    private $salaire;
 
     /**
      * @var string
@@ -217,21 +234,7 @@ class carriere
         $this->locatisation = $locatisation;
     }
 
-    /**
-     * @return float
-     */
-    public function getSalaire()
-    {
-        return $this->salaire;
-    }
 
-    /**
-     * @param float $salaire
-     */
-    public function setSalaire($salaire)
-    {
-        $this->salaire = $salaire;
-    }
 
     /**
      * @return string

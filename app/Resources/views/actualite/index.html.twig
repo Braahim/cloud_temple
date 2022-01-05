@@ -38,8 +38,8 @@
 
                         <div class="card mb-5 target">
                             <div class="card__header">
-                                <a href="">
-                                    <div class="card__featured-img img-to-lazy" data-src="{{ asset('assets/img/' ~ actualite.getPhoto()) }}"></div>
+                                <a href="{{ path('actualite_show', { 'id': actualite.id }) }}">
+                                    <div class="card__featured-img img-to-lazy" data-src="{{ asset('assets/img/' ~ actualite.photo ) }}"></div>
                                 </a>
                             </div>
                             <div class="card__body">
@@ -48,14 +48,14 @@
                                     {{ actualite.dateCreation|date("d/m/y") }}
                                 </div>
                                 <h5>
-                                    <a href="">{{ actualite.title }}</a>
+                                    <a href="{{ path('actualite_show', { 'id': actualite.id }) }}">{{ actualite.title }}</a>
                                 </h5>
                             </div>
                             <div class="card__footer d-flex">
                                 <a href="{{ path('actualite_show', { 'id': actualite.id }) }}">
                                     Lire la suite <i class="icon ion-md-arrow-forward" ></i></a>
                                 <div class="ml-auto">
-                                    <i class="icon ion-md-book mr-1"></i> <span class="font-size-regular"></span>
+                                  <!--  <i class="icon ion-md-book mr-1"></i> <span class="font-size-regular"></span>-->
                                 </div>
                             </div>
                         </div>

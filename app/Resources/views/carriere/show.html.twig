@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
 
+{% block meta %}
+    <meta name="description" content="{{ carriere.meta }}" />
+{% endblock %}
 {% block body %}
 
     <section class="banner">
@@ -287,7 +290,6 @@
                                             <li class="tag">{{ carriere.locatisation }}</li>
                                         </ul>
                                     </li>
-                                    <li class="mb-2">Salaire : <strong>{{ carriere.salaire }}</strong></li>
                                     <li class="mb-2">Prise de poste : <strong>{{carriere.disponnibilite}}</strong></li>
                                 </ul>
                             </div>

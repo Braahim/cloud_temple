@@ -354,17 +354,118 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
+            <div class="col-1 d-none d-md-block">
+                <img class="footer__logo img-to-lazy" width="50" height="50" data-src="https://www.cloud-temple.com/wp-content/themes/cloudtemple/src/assets/images/logo-cloudtemple-footer.svg" alt="Logo Cloud Temple">
+            </div>
+            <ul class="footer-menu col-12 col-md-11 d-flex flex-column flex-lg-row row">
+
+                <li class="footer-menu__item col mb-5 mb-lg-0">
+                    <a class="footer-menu__link" href="{{ path('home_cloud') }}">Cloud</a>
+                    <ul class="footer-menu__submenu">
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link " href="{{ path('home_cloud_strategie') }}">Stratégie Cloud</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link " href="{{ path('home_cloud_public') }}">Cloud public</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link " href="{{ path('home_cloud_souverain') }}">Cloud souverain sécurisé</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="footer-menu__item col mb-5 mb-lg-0">
+                    <a class="footer-menu__link" href="{{ path('home_infogerance') }}">Infogérance</a>
+                    <ul class="footer-menu__submenu">
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link " href="{{ path('home_infogerance_operation') }}">Opération 24/7</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link " href="{{ path('home_infogerance_secops') }}">SecOps</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link " href="{{ path('home_infogerance_finops') }}">FinOps</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link " href="{{ path('home_infogerance_assistance') }}">Assistance aux utilisateurs</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="footer-menu__item col mb-5 mb-lg-0">
+                    <a class="footer-menu__link" href="{{ path('home_about') }}">A propos</a>
+                    <ul class="footer-menu__submenu">
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link " href="{{ path('home_carriere') }}">Carrières</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link " href="{{ path('home_actualite') }}">Actualité</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <li class="footer-menu__item col">
+                    <a class="footer-menu__link" href="{{ path('contact_new') }}">Contact</a>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="24" height="24"
+                             viewBox="0 0 172 172"
+                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none"
+                                                       stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
+                                                       stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                                       font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                                       style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ecf0f1"><path d="M129,64.5c0,23.75033 -43,78.83333 -43,78.83333c0,0 -43,-55.083 -43,-78.83333c0,-23.75033 19.24967,-43 43,-43c23.75033,0 43,19.24967 43,43z" opacity="0.3"></path><path d="M86,82.41667c-9.89717,0 -17.91667,-8.0195 -17.91667,-17.91667c0,-9.89717 8.0195,-17.91667 17.91667,-17.91667c9.89717,0 17.91667,8.0195 17.91667,17.91667c0,9.89717 -8.0195,17.91667 -17.91667,17.91667z"></path><path d="M86,14.405c-27.63467,0 -50.1165,22.48183 -50.1165,50.1165c0,32.12817 42.77067,84.33017 44.591,86.53033l5.5255,6.70083l5.5255,-6.70083c1.82033,-2.20733 44.591,-54.40217 44.591,-86.53033c0,-27.64183 -22.48183,-50.1165 -50.1165,-50.1165zM86,134.92683c-13.459,-17.6515 -35.78317,-50.99083 -35.78317,-70.40533c0,-19.72983 16.05333,-35.78317 35.78317,-35.78317c19.72983,0 35.78317,16.05333 35.78317,35.78317c0,19.38583 -22.32417,52.7395 -35.78317,70.40533z"></path></g></g></svg>  1er étage Immeuble ICC Bloc D, Centre Urbain Nord, 1082 Tunis.
+                       <BR><br>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="24" height="24"
+                             viewBox="0 0 172 172"
+                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#cccccc"><path d="M112.875,106.425l-18.20333,18.13167c-10.97933,-5.7835 -19.77283,-12.52017 -27.219,-20.00933c-7.48917,-7.44617 -14.22583,-16.23967 -20.00933,-27.219l18.13167,-18.20333l-4.57233,-37.625h-39.50267c0,0 0,2.35067 0,7.16667c0,32.5295 13.18667,63.597 35.58967,86.24367c22.64667,22.403 53.71417,35.58967 86.24367,35.58967c4.816,0 7.16667,0 7.16667,0v-39.50267z"></path></g></g></svg>
+                        36 07 07 07
+                        <br><br> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                  width="24" height="24"
+                                  viewBox="0 0 172 172"
+                                  style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M157.66667,64.5l-57.33333,35.83333l-57.33333,-35.83333v14.33333l57.33333,35.83333l57.33333,-35.83333zM114.66667,136.16667h35.83333v14.33333h-35.83333z"></path><path d="M143.33333,172l28.66667,-28.66667l-28.66667,-28.66667z"></path><path d="M50.16667,64.5h100.33333v37.26667l2.86667,2.86667l11.46667,11.46667v-51.6c0,-7.88333 -6.45,-14.33333 -14.33333,-14.33333h-100.33333c-7.88333,0 -14.33333,6.45 -14.33333,14.33333v71.66667c0,7.88333 6.45,14.33333 14.33333,14.33333h50.16667v-14.33333h-50.16667z"></path><path d="M100.33333,136.16667v-7.16667c0,-4.3 2.86667,-7.16667 7.16667,-7.16667h7.16667h14.33333v-7.16667v-7.16667c0,-4.3 2.86667,-7.16667 7.16667,-7.16667h12.9l4.3,4.3l4.3,4.3v-51.6h-114.66667v86h57.33333z" opacity="0.3"></path><path d="M21.5,129h-14.33333v-93.16667c0,-7.88333 6.45,-14.33333 14.33333,-14.33333h114.66667v14.33333h-114.66667z"></path></g></g></svg> contact-tunisie@cloud-temple.com</p>
+                </li>
+
+            </ul>
+        </div>
+        <ul class="social-networks social-networks-light">
+            <li class="social-networks__item">
+                <a href="https://www.linkedin.com/company/cloud-temple" class="social-networks__link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="social-networks__item">
+                <a href="https://twitter.com/CloudTemple" class="social-networks__link" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li class="social-networks__item">
+                <a href="https://www.youtube.com/channel/UCM8tQJD5oTtf0DBpMe7vKzw" class="social-networks__link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </li>
+            <li class="social-networks__item">
+                <a href="https://www.facebook.com/TheCloudTemple/?fref=ts" class="social-networks__link" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="footer-bottom">
             <div class="footer-bottom__copyright">2021 © Cloud Temple</div>
             <ul class="footer-bottom__menu">
 
-                <li class="footer-bottom__item">
 
-                </li>
-            </ul>
-        </div>
+        </ul>
+    </div>
     </div>
 </footer>
-
 {%  block javascripts %}
 <script src="{{ asset('bundles/usnnewsletter/js/main.js') }}"></script>
 

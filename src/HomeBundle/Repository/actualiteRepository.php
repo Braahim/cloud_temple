@@ -10,4 +10,32 @@ namespace HomeBundle\Repository;
  */
 class actualiteRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function recently_added(){
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            '
+        select a.id,a.title, a.dateCreation from HomeBundle:actualite a order by a.dateCreation DESC 
+        '
+
+        )->setMaxResults(5)->getResult();
+
+        return $query;
+
+
+    }
+    public function order_date_desc(){
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            '
+        select a.id,a.title, a.dateCreation, a.photo from HomeBundle:actualite a order by a.dateCreation DESC 
+        '
+
+        )->getResult();
+
+        return $query;
+
+
+    }
+
 }

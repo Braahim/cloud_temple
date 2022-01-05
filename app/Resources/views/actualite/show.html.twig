@@ -67,27 +67,29 @@
                     </div>
 
                     <div class="col-12 col-lg-3 offset-lg-1">
-<!--
+
                         <div class="single__column">
                             <h4>Articles récents</h4>
+                            {% for r in recent %}
                             <div class="card card-mini">
                                 <div class="card__body">
                                     <div class="font-size-small">
                                         <i class="icon ion-md-calendar mr-2"></i>
-                                        11/03/2016
+                                       {{ r.dateCreation | date('d-m-Y') }}
                                     </div>
-                                    <a href="../jai-transforme-schneider-electric/index.html" class="text-decoration-none">
+                                    <a href="{{ path('actualite_show', { 'id': r.id }) }}" class="text-decoration-none">
                                         <h6 class="mb-0">
-                                            Comment j&#8217;ai transformé Schneider Electric
+                                           {{ r.title }}
                                         </h6>
                                     </a>
                                 </div>
                                 <div class="card__footer">
-                                    <a href="../jai-transforme-schneider-electric/index.html" class="read-more">Lire la suite <i class="icon ion-md-arrow-forward"></i></a>
+                                    <a href="{{ path('actualite_show', { 'id': r.id }) }}" class="read-more">Lire la suite <i class="icon ion-md-arrow-forward"></i></a>
                                 </div>
                             </div>
+                            {% endfor %}
                         </div>
-                        -->
+
                     </div>
                 </div>
             </div>

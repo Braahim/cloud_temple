@@ -28,7 +28,7 @@ class actualiteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $actualites = $em->getRepository('HomeBundle:actualite')->findAll();
+        $actualites = $em->getRepository('HomeBundle:actualite')->order_date_desc();
 
         return $this->render('actualite/index.html.twig', array(
             'actualites' => $actualites,
@@ -75,7 +75,7 @@ class actualiteController extends Controller
             $em->flush();
 
             $msg = \Swift_Message::newInstance()
-                ->setSubject('Un nouvel a été ajouté')
+                ->setSubject('Un nouvel article a été ajouté')
                 ->setFrom('bhyazaiez1@gmail.com')
                 ->setBcc($emails)
                 ->setBody(
@@ -111,11 +111,11 @@ class actualiteController extends Controller
      */
     public function showAction(actualite $actualite)
     {
-        $deleteForm = $this->createDeleteForm($actualite);
+        $recent = $this->getDoctrine()->getManager()->getRepository('HomeBundle:actualite')->recently_added();
 
         return $this->render('actualite/show.html.twig', array(
             'actualite' => $actualite,
-            'delete_form' => $deleteForm->createView(),
+            'recent' => $recent,
         ));
     }
 

@@ -16,7 +16,7 @@ class carriereType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('titre')->add('description',TextareaType::class)->add('profil',TextareaType::class)
-            ->add('missions',TextareaType::class)->add('salaire')->add('disponnibilite')
+            ->add('missions',TextareaType::class)->add('disponnibilite')
             ->add('type_contrat',ChoiceType::class, [
                 'choices' => [
                     'Alternance' => 'Alternance',
@@ -25,7 +25,7 @@ class carriereType extends AbstractType
                     'STAGE' => 'STAGE'
                 ]
             ])
-            ->add('locatisation');
+            ->add('locatisation')->add('meta',TextareaType::class);
     }/**
      * {@inheritdoc}
      */
